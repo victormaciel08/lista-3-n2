@@ -1,0 +1,48 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+typedef struct {
+    int dia, mes, ano;
+} Data;
+
+int diasPorMes(int mes, int ano) {
+    switch (mes) {
+        case 1: case 3: case 5: case 7: case 8: case 10: case 12:
+            return 31;
+        case 4: case 6: case 9: case 11:
+            return 30;
+        case 2:
+            if ((ano % 4 == 0 && ano % 100 != 0) || (ano % 400 == 0))
+                return 29;
+            else
+                return 28;
+        default:
+            return 0; 
+    }
+}
+
+Data adicionarDias(Data d, int dias) {
+    d.dia += dias;
+    while (d.dia > diasPorMes(d.mes, d.ano)) {
+        d.dia -= diasPorMes(d.mes, d.ano);
+        d.mes++;
+        if (d.mes > 12) {
+            d.mes = 1;
+            d.ano++;
+        }
+    }
+    return d;
+}
+
+int main(void) {
+    Data data = {8, 8, 2008}; 
+    int nDias;
+
+    printf("Digite a quantidade de dias que deseja adicionar a data: ");
+    scanf("%d", &nDias);
+
+    Data nData = adicionarDias(data, nDias);
+    printf("Nova Data: %d/%d/%d\n", nData.dia, nData.mes, nData.ano);
+
+    return 0;
+}
