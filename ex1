@@ -19,9 +19,10 @@ int main(void) {
 	ponto.x = 10;
 	ponto.y = 8;
 	
-	printf("Distancia do ponto (%.2f,%.2f) a origem: %.2f", ponto.x, ponto.y, distanciaOrigem(ponto));
+	float result = distanciaOrigem(p);
+	
+	printf("Distancia do ponto (%.2f,%.2f) a origem: %.2f", ponto.x, ponto.y, result);
 		
 	
     return 0;
 }
-
