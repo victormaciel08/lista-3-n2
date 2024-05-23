@@ -1,0 +1,42 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <math.h>
+
+typedef struct{
+	char nome[50];
+	float nota1;
+	float nota2;
+	float nota3;	
+}Estudante;
+
+float mediaNotas(Estudante nota){
+	return (nota.nota1 + nota.nota2 + nota.nota3 / 3);
+};
+
+int i;
+int main(void) {
+	
+	Estudante n;
+	n.nome;
+	n.nota = 0;
+
+	
+	printf("Digite Nome Do Estudante: ");
+	scanf(" %50[^\n]", &Estudante.nome);
+	fflush(stdin);
+	
+	for(i = 1; i < 4; i++){
+	
+	printf("Digite a nota %d: ", i);
+	scanf("%f", &n[i].nota);
+	
+	
+	float media = mediaNotas(n)
+	
+	printf("A media do Estudante %s e : %.2f", Estudante.nome, media);
+	
+	
+	
+    return 0;
+}
