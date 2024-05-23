@@ -24,21 +24,21 @@ float mediaNotas(Estudante e){
 int main(void) {
 	
 	int i;
-	Estudante estudante [X];
+	Estudante estudante;
 	
 	printf("Digite Nome Do Estudante: ");
-	scanf(" %50[^\n]", &estudante[0].nome);
+	scanf(" %50[^\n]", &estudante.nome);
 	fflush(stdin);
 	
 	for(i = 0; i < X; i++){
 	
-	printf("Digite a nota %d: ");
-	scanf("%f", &estudante[0].nota[i]);
+	printf("Digite a nota %d: ", i + 1);
+	scanf("%f", &estudante.nota[i]);
 	}
 	
 	float media = mediaNotas(estudante);
 	
-	printf("A media do Estudante %s e : %.2f", estudante[0].nome, media);
+	printf("A media do Estudante %s e : %.2f", estudante.nome, media);
 	
     return 0;
 }
